@@ -1,0 +1,33 @@
+
+
+#container{
+    display: grid;
+    grid-template-columns: 30vw 30vw 30vw;
+}
+
+span{
+    height: fit-content;
+    width: inherit;
+}
+
+input[type="radio"] {
+    position: absolute;
+    left: -9999px;
+  }
+  
+input[type="radio"]:checked + label > img {
+    box-shadow: 0 0 4px 4px rgb(59 130 246);
+}
+  
+input[type="radio"] + label > img {
+    border: 1px rgb(0, 0, 0);
+    padding: 10px;
+
+    transition: 200ms all;
+}
+  
+
+
+
+
+

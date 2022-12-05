@@ -1,0 +1,19 @@
+<app-header></app-header>
+<div id="container" (scroll)="scroll($event)" #scrollelement>
+    <app-add-suggestion (reloadSuggestion)="loadSuggestions()" (likeNewSuggestion)="like($event)"> </app-add-suggestion>
+    <div  *ngFor="let page of Pages">
+        <div class="shadow-xl mt-3 mx-3 p-4 rounded-md outline outline-slate-900 flex" *ngFor="let suggestion of page.content">
+            <div class="">
+                <svg id="thumb-{{suggestion.suggestionId}}" class="h-8 w-8 text-black " (click)="like(suggestion)"  viewBox="0 0 24 24"  fill="none" 
+                stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round">  
+                <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3" />
+                </svg>
+                <h5 class="text-center">{{suggestion.likes}}</h5>
+            </div>
+            <div class="ml-2">
+                <p class="text-lg font-semibold">{{suggestion.text}}</p>
+                <app-comments [suggestion]="suggestion" class="min-w-full"></app-comments>
+            </div>
+        </div>
+    </div>
+</div>

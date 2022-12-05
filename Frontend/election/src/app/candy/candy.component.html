@@ -1,0 +1,84 @@
+<app-header></app-header>
+<div id="popup">
+    <form (ngSubmit)="submit(form)" #form="ngForm">
+    <div id="partone" #partone [hidden]="isPartOneHidden">
+        <h1 class="text-5xl font-extrabold leading-none lg:text-8xl text-white text-center">Free Candy</h1>
+        <div id="locker">
+            <p class=" my-4 text-2xl leading-none lg:text-8xl text-white">1) Locker Number</p>
+            <div class="min-w-screen grid grid-cols-4 justify-items-center text-5xl">
+                <input name="0" type="number" ngModel required min="1" max="1"
+                (keyup)="keyup($event)" #first autofocus class="w-20 h-24 outline text-center"/>
+    
+                <input name="1" type="number" ngModel required min="1" max="1" 
+                (keyup)="keyup($event)" (click)="click()" #second class="w-20 h-24 outline text-center"/>
+    
+                <input name="2" type="number" ngModel required min="1" max="1"
+                (keyup)="keyup($event)" (click)="click()" #third class="w-20 h-24 outline text-center"/>
+    
+                <input name="3" type="number" ngModel required min="1" max="1" 
+                (keyup)="keyup($event)" (click)="click()" #fourth class="w-20 h-24 outline text-center"/>
+            </div>
+            <p id="reset" (click)="reset()" class="text-center">reset?</p>
+        </div>
+    
+        <div id="contact" class="my-4">
+            <p class="text-2xl leading-none lg:text-8xl text-white">2) Contact Info (email or phone)</p><br />
+            <input id="contact" name="contact" type="text" ngModel #contact placeholder=" 6023334444 or abc@gmail.com"
+            class="flex h-10  w-11/12 justify-self-center mx-auto outline outline-2 text-center"/>
+            <p class="mt-0 pt-0 text-sm text-center">(Optional but one more free candy will be rewarded if filled out) </p>
+        </div>
+    
+        <div class="flex w-full justify-center">
+            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-3/4" 
+            type="button" [disabled]="isFormValid" (click)="checkCandyAvailability(first, second, third, fourth, contact)">Check</button>
+        </div>
+        
+    
+        <p hidden="true" #errormsg class="text-center text-lg text-red-600 mt-5 mx-3"> </p>
+        <p  #candymsg style="color: darkcyan;"> </p>
+        <p #candysubmsg style="color: darkcyan;"> </p>
+    </div>
+    
+    <div id="parttwo" #parttwo [hidden]="isPartTwoHidden">
+        <h1 class="text-5xl font-extrabold leading-none lg:text-8xl text-white text-center mt-3">Congratulations!!!</h1>
+
+        <div *ngIf="numberOfCandies == 1 && moreCandyToClaim">
+            <h1 class="text-center text-2xl font-light  text-white">You Have Claimed Your First candy</h1>
+            <p class="text-center text-base font-light text-white">(You can still claim one more if you fill in your contact info)</p>
+        </div>
+
+        <div *ngIf="numberOfCandies == 1 && !moreCandyToClaim">
+            <h1 class="text-center text-2xl font-light  text-white">You have claimed your Second Candy</h1>
+        </div>
+
+        <div *ngIf="numberOfCandies == 2">
+            <h1 class="text-center text-2xl font-light  text-white">You Have claimed Both of your candies</h1>
+        </div>
+
+        <h1 class="text-2xl leading-none lg:text-8xl1 mt-5 mx-3 text-center pb-1">First candy </h1>
+        <div class="mx-3 grid grid-cols-2 grid-rows-2">
+          <span *ngFor="let type of typeOfCandies">
+            <input type="radio" id="first-{{type[0]}}" name="firstCandy" value="{{type[0]}}" ngModel />
+            <label for="first-{{type[0]}}">
+              <img src="{{type[1]}}"  />
+            </label>
+          </span>
+        </div>
+    
+        <h1 *ngIf="numberOfCandies == 2" class="text-2xl leading-none lg:text-8xl1 mt-5 mx-3 text-center pb-1">Second candy </h1>
+        <div *ngIf="numberOfCandies == 2" class="mx-3 grid grid-cols-2 grid-rows-2">
+          <span *ngFor="let type of typeOfCandies">
+            <input type="radio" id="second-{{type[0]}}" name="secondCandy" value="{{type[0]}}" ngModel />
+            <label for="second-{{type[0]}}">
+              <img src="{{type[1]}}"  />
+            </label>
+          </span>
+        </div>
+        <div class="flex w-full justify-center">
+            <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-3/4 my-3">Submit</button>
+        </div>
+    </div>
+    </form>
+</div>
+
+
