@@ -15,7 +15,7 @@ export class SuggestionComponent implements OnInit {
   Pages: any[] = [];
   currentPageNumber = 0;
   lastPage: boolean = false;
-  hasBeenLiked: boolean = false;
+  hasBeenLiked = false;
     
 
   constructor(private http: HttpClient, private suggestionService: SuggestionService, private route: Router) { }
@@ -43,12 +43,7 @@ export class SuggestionComponent implements OnInit {
     })
   }
 
-  like(suggestion){
-    var thumbsUp = document.getElementById(`thumb-${suggestion.suggestionId}`)
-    thumbsUp.classList.add("fill-green-800");
-    this.hasBeenLiked = true
-    this.suggestionService.addLike(suggestion.suggestionId, suggestion.likes).subscribe();
-  }
+
   
 
 }

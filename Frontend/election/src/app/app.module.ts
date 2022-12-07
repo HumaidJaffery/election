@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 import { AddSuggestionComponent } from './add-suggestion/add-suggestion.component';
 import { CommentsComponent } from './comments/comments.component';
 import { HeaderComponent } from './header/header.component';
+import { LikeBtnComponent } from './like-btn/like-btn.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { HeaderComponent } from './header/header.component';
     AddSuggestionComponent,
     CommentsComponent,
     HeaderComponent,
+    LikeBtnComponent,
   ],
   imports: [
     BrowserModule,

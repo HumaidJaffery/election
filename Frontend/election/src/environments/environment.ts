@@ -3,8 +3,8 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false,
-  apiServerUrl: 'http://localhost:8080' 
+  production: true,
+  apiServerUrl: 'http://184.182.23.251:8080' 
 };
 
 /*

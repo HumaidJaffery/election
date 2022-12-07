@@ -2,6 +2,7 @@ spring:
   datasource:
     username: postgres
     url: jdbc:postgresql://localhost:5432/election
+#   pretend you can not see this pls
     password: billybobjoe2152
   jpa:
     properties:

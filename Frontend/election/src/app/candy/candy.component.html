@@ -2,35 +2,35 @@
 <div id="popup">
     <form (ngSubmit)="submit(form)" #form="ngForm">
     <div id="partone" #partone [hidden]="isPartOneHidden">
-        <h1 class="text-5xl font-extrabold leading-none lg:text-8xl text-white text-center">Free Candy</h1>
+        <h1 class="text-5xl font-extrabold leading-none lg:text-8xl text-white text-center my-4">Free Candy</h1>
         <div id="locker">
-            <p class=" my-4 text-2xl leading-none lg:text-8xl text-white">1) Locker Number</p>
+            <p class=" my-4 text-2xl leading-none lg:text-8xl text-black">1) Locker Number</p>
             <div class="min-w-screen grid grid-cols-4 justify-items-center text-5xl">
                 <input name="0" type="number" ngModel required min="1" max="1"
                 (keyup)="keyup($event)" #first autofocus class="w-20 h-24 outline text-center"/>
     
                 <input name="1" type="number" ngModel required min="1" max="1" 
-                (keyup)="keyup($event)" (click)="click()" #second class="w-20 h-24 outline text-center"/>
+                (keyup)="keyup($event)" #second class="w-20 h-24 outline text-center"/>
     
                 <input name="2" type="number" ngModel required min="1" max="1"
-                (keyup)="keyup($event)" (click)="click()" #third class="w-20 h-24 outline text-center"/>
+                (keyup)="keyup($event)" #third class="w-20 h-24 outline text-center"/>
     
                 <input name="3" type="number" ngModel required min="1" max="1" 
-                (keyup)="keyup($event)" (click)="click()" #fourth class="w-20 h-24 outline text-center"/>
+                (keyup)="keyup($event)"  #fourth class="w-20 h-24 outline text-center"/>
             </div>
             <p id="reset" (click)="reset()" class="text-center">reset?</p>
         </div>
     
         <div id="contact" class="my-4">
-            <p class="text-2xl leading-none lg:text-8xl text-white">2) Contact Info (email or phone)</p><br />
+            <p class="text-2xl leading-none lg:text-8xl text-black">2) Contact Info (email or phone)</p><br />
             <input id="contact" name="contact" type="text" ngModel #contact placeholder=" 6023334444 or abc@gmail.com"
             class="flex h-10  w-11/12 justify-self-center mx-auto outline outline-2 text-center"/>
-            <p class="mt-0 pt-0 text-sm text-center">(Optional but one more free candy will be rewarded if filled out) </p>
+            <p class="mt-0 pt-0 text-sm text-center">Optional but <b>EXTRA CANDY </b> will be rewarded </p>
         </div>
     
         <div class="flex w-full justify-center">
             <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-3/4" 
-            type="button" [disabled]="isFormValid" (click)="checkCandyAvailability(first, second, third, fourth, contact)">Check</button>
+            type="button" (click)="checkCandyAvailability(first, second, third, fourth, contact)">Check</button>
         </div>
         
     

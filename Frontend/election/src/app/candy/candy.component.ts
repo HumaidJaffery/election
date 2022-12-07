@@ -72,10 +72,6 @@ export class CandyComponent implements OnInit, AfterViewInit {
     }
   }
 
-  click() {
-    this.lockerNumberInputs[0].focus();
-  }
-
   reset() {
     this.lockerNumberInputs.forEach(input => {
       input.value = '';

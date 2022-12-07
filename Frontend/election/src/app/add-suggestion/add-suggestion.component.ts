@@ -11,7 +11,6 @@ import { newSuggestion } from './newSuggestion';
 })
 export class AddSuggestionComponent implements OnInit {
   @Output('reloadSuggestion') reloadSuggestion = new EventEmitter<void>();
-  @Output('likeNewSuggestion') likeNewSuggestion = new EventEmitter<any>();
 
 
   isFormHidden: boolean = true;
@@ -35,9 +34,6 @@ export class AddSuggestionComponent implements OnInit {
 
   }
 
-  like(suggestion: any){
-    this.likeNewSuggestion.emit(suggestion);
-  }
 
 
 }

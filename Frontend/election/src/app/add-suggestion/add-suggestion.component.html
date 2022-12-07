@@ -15,7 +15,7 @@
         
             <div class="my-2 flex justify-center text-lg font-semibold">
                 <div class="mx-3">
-                    <input name="isPublic" id="public" value="public" type="radio" ngModel >
+                    <input name="isPublic" id="public" value="public" type="radio" ngModel [defaultChecked]="true" required>
                     <label for="public">Public</label>
                 </div>
 

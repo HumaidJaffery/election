@@ -24,9 +24,8 @@ public class SuggestionService {
     }
 
     public Page<Suggestion> getPublicSuggestionsService(int page){
-        Suggestion suggestion = new Suggestion();
-        suggestion.setPublic(true);
-        ExampleMatcher exampleMatcher = ExampleMatcher.matching().withIgnorePaths("suggestionId");
+        Suggestion suggestion = new Suggestion(null, null, true, null, null);
+        ExampleMatcher exampleMatcher = ExampleMatcher.matching().withIgnorePaths("suggestionId", "text", "likes", "comments");
         Example<Suggestion> ex = Example.of(suggestion, exampleMatcher);
 
 
@@ -47,6 +46,7 @@ public class SuggestionService {
         Comment comment = new Comment(null, null, suggestionRepository.findById(id).get());
         ExampleMatcher exampleMatcher = ExampleMatcher.matching().withIgnorePaths("commentId", "text");
         Example<Comment> ex = Example.of(comment, exampleMatcher);
+        System.out.println(ex);
 
         PageRequest pr = PageRequest.of(page, 5);
         return commentRepository.findAll(ex, pr);
