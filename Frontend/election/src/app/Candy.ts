@@ -3,5 +3,6 @@ export interface Candy {
     firstCandyType: String;
     secondCandyType: String;
     contactInfo: String;
-    
+    name: String;
+    grade: String;
 }

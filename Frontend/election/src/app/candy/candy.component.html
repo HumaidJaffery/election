@@ -2,14 +2,14 @@
 <div id="popup">
     <form (ngSubmit)="submit(form)" #form="ngForm">
     <div id="partone" #partone [hidden]="isPartOneHidden">
-        <h1 class="text-5xl font-extrabold leading-none lg:text-8xl text-white text-center my-4">Free Candy</h1>
+        <!-- <h1 class="text-5xl font-extrabold leading-none lg:text-8xl text-white text-center my-4">Free Candy</h1> -->
         <div id="locker">
-            <p class=" my-4 text-2xl leading-none lg:text-8xl text-black">1) Locker Number</p>
+            <p class="my-7 text-2xl leading-none lg:text-8xl text-black font-semibold">1) Locker Number</p>
             <div class="min-w-screen grid grid-cols-4 justify-items-center text-5xl">
                 <input name="0" type="number" ngModel required min="1" max="1"
                 (keyup)="keyup($event)" #first autofocus class="w-20 h-24 outline text-center"/>
     
-                <input name="1" type="number" ngModel required min="1" max="1" 
+                <input name="1" type="number" ngModel required min="1" max="1"
                 (keyup)="keyup($event)" #second class="w-20 h-24 outline text-center"/>
     
                 <input name="2" type="number" ngModel required min="1" max="1"
@@ -18,25 +18,44 @@
                 <input name="3" type="number" ngModel required min="1" max="1" 
                 (keyup)="keyup($event)"  #fourth class="w-20 h-24 outline text-center"/>
             </div>
-            <p id="reset" (click)="reset()" class="text-center">reset?</p>
+            <p id="reset" (click)="reset()" class="text-center text-white">reset?</p>
         </div>
     
-        <div id="contact" class="my-4">
-            <p class="text-2xl leading-none lg:text-8xl text-black">2) Contact Info (email or phone)</p><br />
+        <div id="contact" class="my-7">
+            <p class="text-2xl leading-none lg:text-8xl text-black font-semibold">2) Contact Info (email or phone)</p><br />
             <input id="contact" name="contact" type="text" ngModel #contact placeholder=" 6023334444 or abc@gmail.com"
             class="flex h-10  w-11/12 justify-self-center mx-auto outline outline-2 text-center"/>
-            <p class="mt-0 pt-0 text-sm text-center">Optional but <b>EXTRA CANDY </b> will be rewarded </p>
+            <p class="mt-0 pt-0 text-sm text-center text-white">Optional but <b>EXTRA CANDY </b> will be rewarded </p>
         </div>
-    
+
+        <div id="contact" class="my-7">
+          <p class="text-2xl leading-none lg:text-8xl text-black font-semibold">3) Name and Grade</p><br />
+          <input id="name" name="name" type="text" ngModel #name required placeholder="Name"
+          class="flex h-10 w-11/12 justify-self-center mx-auto outline outline-2 text-center"/>
+        </div>
+
+        <div class="my-2 flex justify-center text-lg font-semibold">
+          <div class="mx-3">
+              <input name="grade" id="eight" value="eight" type="radio" checked >
+              <label for="public">Eight</label>
+          </div>
+          <div class="mx-3">
+              <input name="grade" id="ninth" value="ninth" type="radio" ngModel >
+              <label for="private">Ninth</label>
+          </div>
+          <div class="mx-3">
+            <input name="grade" id="other" value="other" type="radio" ngModel >
+            <label for="private">Other</label>
+        </div>
+          </div>
+        
         <div class="flex w-full justify-center">
             <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-3/4" 
-            type="button" (click)="checkCandyAvailability(first, second, third, fourth, contact)">Check</button>
+            type="button" (click)="checkCandyAvailability(first, second, third, fourth, contact, name)">Get Candy</button>
         </div>
-        
-    
         <p hidden="true" #errormsg class="text-center text-lg text-red-600 mt-5 mx-3"> </p>
-        <p  #candymsg style="color: darkcyan;"> </p>
-        <p #candysubmsg style="color: darkcyan;"> </p>
+        <p  #candymsg style="color: darkcyan; text-align: center;" > </p>
+        <p #candysubmsg style="color: darkcyan; text-align: center;"> </p>
     </div>
     
     <div id="parttwo" #parttwo [hidden]="isPartTwoHidden">
@@ -58,7 +77,7 @@
         <h1 class="text-2xl leading-none lg:text-8xl1 mt-5 mx-3 text-center pb-1">First candy </h1>
         <div class="mx-3 grid grid-cols-2 grid-rows-2">
           <span *ngFor="let type of typeOfCandies">
-            <input type="radio" id="first-{{type[0]}}" name="firstCandy" value="{{type[0]}}" ngModel />
+            <input type="radio" id="first-{{type[0]}}" name="firstCandy" value="{{type[0]}}" ngModel class="locker"/>
             <label for="first-{{type[0]}}">
               <img src="{{type[1]}}"  />
             </label>
@@ -75,10 +94,17 @@
           </span>
         </div>
         <div class="flex w-full justify-center">
-            <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-3/4 my-3">Submit</button>
+            <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-3/4 my-3 justify-self-center">Submit</button>
         </div>
+
+        <h1 #info id="info">
+
+        </h1>
+        
     </div>
     </form>
+
+
 </div>
 
 

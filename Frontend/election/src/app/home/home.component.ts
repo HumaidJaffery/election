@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -11,9 +11,13 @@ export class HomeComponent implements OnInit {
   isMenu: boolean = false;
   isSearch: boolean = false;
 
+
+  successMsgHidden: boolean = true;
+
   constructor(private route: Router) { }
 
   ngOnInit(): void {
+
   }
 
   candyRouting(){
@@ -21,7 +25,7 @@ export class HomeComponent implements OnInit {
   }
 
   suggestionRouting() {
-    this.route.navigateByUrl("/suggestion");
+    this.route.navigateByUrl("/suggestion/false");
   }
 
 

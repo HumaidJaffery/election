@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
 import { SuggestionService } from '../suggestion.service';
 
@@ -16,14 +16,18 @@ export class SuggestionComponent implements OnInit {
   currentPageNumber = 0;
   lastPage: boolean = false;
   hasBeenLiked = false;
+  redirect: boolean;
     
 
-  constructor(private http: HttpClient, private suggestionService: SuggestionService, private route: Router) { }
+  constructor(private http: HttpClient, private suggestionService: SuggestionService, private actRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.redirect = this.actRoute.snapshot.paramMap.get('redirect') == 'true' ? true : false;
+
     this.suggestionService.getSuggestionPage(this.currentPageNumber).subscribe((response: any)=>{
       this.Pages.push(response);
     })
+
   }
 
   scroll(data: any){

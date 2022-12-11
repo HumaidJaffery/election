@@ -4,7 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="16d1e2d4-f594-4ce1-8b1f-96457d936e47" name="Changes" comment="" />
+    <list default="true" id="16d1e2d4-f594-4ce1-8b1f-96457d936e47" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/election/src/main/java/com/election/election/Controller/CandyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/election/src/main/java/com/election/election/Controller/CandyController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/election/src/main/java/com/election/election/Entity/Candy.java" beforeDir="false" afterPath="$PROJECT_DIR$/election/src/main/java/com/election/election/Entity/Candy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/election/src/main/java/com/election/election/Service/CandyService.java" beforeDir="false" afterPath="$PROJECT_DIR$/election/src/main/java/com/election/election/Service/CandyService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Frontend/election/src/app/add-suggestion/add-suggestion.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/election/src/app/add-suggestion/add-suggestion.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Frontend/election/src/app/add-suggestion/add-suggestion.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/election/src/app/add-suggestion/add-suggestion.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Frontend/election/src/app/candy/candy.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/election/src/app/candy/candy.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Frontend/election/src/app/candy/candy.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/election/src/app/candy/candy.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Frontend/election/src/app/home/home.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/election/src/app/home/home.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Frontend/election/src/app/home/home.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/election/src/app/home/home.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Frontend/election/src/assets/images/pfp.jpg" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -30,6 +42,9 @@
         <option value="Interface" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="JpbToolWindowState">
     <option name="myId2FirstActivated">
@@ -58,6 +73,7 @@
     </option>
   </component>
   <component name="ProjectId" id="2Hmp74yaIr8GEff5V3itMqxjPcL" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -99,5 +115,16 @@
       <updated>1668899970469</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

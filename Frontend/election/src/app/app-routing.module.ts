@@ -8,7 +8,7 @@ import { SuggestionComponent } from './suggestion/suggestion.component';
 const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'candy', component: CandyComponent},
-  {path: 'suggestion', component: SuggestionComponent},
+  {path: 'suggestion/:redirect', component: SuggestionComponent},
   {path: '**', redirectTo: ''}
 ];
 

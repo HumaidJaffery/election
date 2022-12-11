@@ -25,10 +25,11 @@ export class AddSuggestionComponent implements OnInit {
     console.log(data.value);
     var newSuggestion: newSuggestion = {
       "text": data.value.text,
-      "public": data.value.isPublic == 'public' ? true : false,
+      "public": data.value.isPublic == 'private' ? false : true,
       "likes": 0
     }
     this.http.post(`${environment.apiServerUrl}/addSuggestion`, newSuggestion).subscribe((response: any)=>{
+      this.route.navigateByUrl('', {state: {'success': true}})
       console.log(response);
     })
 

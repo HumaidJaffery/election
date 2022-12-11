@@ -1,6 +1,6 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { Router } from '@angular/router';
+import { AfterViewInit, Component, ElementRef, OnInit, ViewChild, Renderer2 } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
 import { Candy } from '../Candy';
 
@@ -25,6 +25,7 @@ export class CandyComponent implements OnInit, AfterViewInit {
   lockerNumber: number;
 
 
+
   typeOfCandies: any = [
     ["blueberry", "../../assets/images/blueberry.png"],
     ["cherry", "../../assets/images/cherry.png"],
@@ -38,9 +39,10 @@ export class CandyComponent implements OnInit, AfterViewInit {
   numberOfCandies: number;
   moreCandyToClaim: boolean;
 
-  constructor(private http: HttpClient, private route: Router) { }
+  constructor(private http: HttpClient, private route: Router, private actRoute: ActivatedRoute, private renderer2: Renderer2) { }
 
   ngOnInit(): void {
+    this.actRoute.queryParams
   }
 
 
@@ -82,7 +84,7 @@ export class CandyComponent implements OnInit, AfterViewInit {
   }
 
   
-  checkCandyAvailability(first, second, third, fourth, contact) {
+  checkCandyAvailability(first, second, third, fourth, contact, name) {
     var lockerNumber: string = "";
     var hasContactInfo: boolean;
 
@@ -97,6 +99,13 @@ export class CandyComponent implements OnInit, AfterViewInit {
       this.reset();
       return;
     } 
+
+    //checking grade and name
+    if(name.value == '' || name.value == null) {
+      this.errorMsg.nativeElement.innerHTML = "Please Provide a name, We cant give you the candy without a name"
+      this.errorMsg.nativeElement.hidden = false;
+      return;
+    }
 
     //validating and getting contact info
     var regx: RegExp = new RegExp("^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})|(^[0-9]{10})+$")
@@ -138,18 +147,22 @@ export class CandyComponent implements OnInit, AfterViewInit {
     })
   }
 
+
+
   submit(data: any){
     console.log(data)
+    console.log(data.value)
       var newCandy: Candy = {
         "locker": this.lockerNumber,
         "contactInfo": data.value.contact == undefined ? null : data.value.contact,
         "firstCandyType": data.value.firstCandy,
         "secondCandyType": data.value.secondCandy == undefined ? null : data.value.secondCandy,
+        "name": data.value.name,
+        "grade": data.value.grade == '' ? 'eight' : data.value.grade
       }
-      console.log(newCandy);
 
       this.http.post(`${environment.apiServerUrl}/addCandy`, newCandy).subscribe((response: any)=>{
-        this.route.navigateByUrl("/");
+        this.route.navigateByUrl("/suggestion/true");
       })
     }
 

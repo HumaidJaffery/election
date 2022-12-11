@@ -21,7 +21,7 @@ public class CandyController {
     }
 
     @PostMapping("/addCandy")
-    public ResponseEntity addCandy(@RequestBody Candy candy){
+    public Candy addCandy(@RequestBody Candy candy){
         return candyService.addCandy(candy);
     }
 

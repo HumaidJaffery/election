@@ -39,7 +39,7 @@ public class CandyService {
         }
     }
 
-    public ResponseEntity<Candy> addCandy(Candy candy) {
+    public Candy addCandy(Candy candy) {
         if(candyRepository.existsById(candy.getLocker())){
                 Candy AlreadyCandy = candyRepository.findById(candy.getLocker()).get();
                 AlreadyCandy.setSecondCandyType(candy.getSecondCandyType());
@@ -48,7 +48,7 @@ public class CandyService {
         } else {
             candyRepository.save(candy);
         }
-        return new ResponseEntity<>(candyRepository.findById(candy.getLocker()).get(), HttpStatus.OK);
+        return candyRepository.findById(candy.getLocker()).get();
     }
 
 }

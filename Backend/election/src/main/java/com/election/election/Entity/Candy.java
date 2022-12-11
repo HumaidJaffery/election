@@ -23,4 +23,7 @@ public class Candy {
 
     private String contactInfo;
 
+    private String name;
+
+    private String grade;
 }

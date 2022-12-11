@@ -1,15 +1,17 @@
+
+
 <!--Hero-->
 <section class="bg-gray-900">
     <!--Image-->
     <div class="max-w-full grid py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 grid-cols-12 min-h-full items-center">
-        <div class="col-start-2 col-span-10 lg:col-span-5 rounded-full items-center">
-            <img src="../../assets/images/pfp.jpg" alt="mockup" class="rounded-full">
+        <div class="col-start-2 col-span-10 lg:col-span-5 rounded-full items-center justify-center">
+            <img src="../../assets/images/img.png" alt="mockup" class="rounded-full">
         </div>   
-        <!--Vote For Humaid JAffery Pr officer-->
         <div class="col-start-2 col-span-10 mt-5 mx-auto lg:col-span-7 text-center">
-            <p class="text-3xl font-light text-gray-500 lg:text-6x">Vote for</p>
+            <p class="text-3xl font-light text-gray-400 lg:text-6x">Vote for</p>
             <h1 class="text-5xl font-extrabold leading-none lg:text-8xl text-white">Humaid Jaffery</h1>
-            <p class="text-2xl font-light text-gray-500 lg:text-4xl ">PR Officer</p>
+            <p class="text-2xl font-light text-gray-400 lg:text-4xl ">PR Officer</p>
+            <p class="text-xl font-light text-gray-500 lg:text-2xl ">(Plus Hamza for Secretary)</p>
         </div>         
     </div>
 </section>
@@ -37,23 +39,26 @@
 </section>
 
 <!--Buttons-->
-<section class="bg-slate-400">
-    <div class="max-w-full grid py-5 mx-auto lg:gap-8 xl:gap-0 lg:py-16 grid-cols-12 justify-center divide-black divide-x-2">
-        <div class="cols-start-1 col-span-6 flex flex-col">
-            <h1 class="text-center text-3xl font-extrabold leading-none lg:text-8xl dark:text-white mb-5">Candy</h1>
-            <p class="text-center text-xl font-light lg:text-xl text-gray-900 mx-5 mb-5">
-                As a thank you, You get FREE CANDY  (not a bribe at all ;)</p>
-            <button (click)="candyRouting()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded self-center">Claim <br> FREE CANDY</button>
-        </div>
-
-        <div class="cols-start-2 col-span-6 flex flex-col">
-            <h1 class="text-center text-3xl font-extrabold leading-none lg:text-8xl dark:text-white mb-5">Suggestion</h1>
-            <p class="text-center text-xl font-light text-gray-500 lg:text-xl dark:text-gray-900 mx-5 mb-5">An anonymous public platform to voice your opinions</p>
-            <button (click)="suggestionRouting()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded self-center mx-5"> Make a SUGGESTION</button>
+<section>
+    <div class="bg-slate-400 flex min-w-screen flex-row justify-center">
+        <div class="cols-start-2 col-span-6 flex flex-col my-7">
+            <h1 class="text-center text-3xl font-extrabold leading-none lg:text-8xl dark:text-white mb-2">Free Candy </h1>
+            <p class="text-center text-xl font-light text-gray-900 lg:text-xl mx-5">
+                    As a thank you for your time, You get up to two pieces of FREE CANDY (not a bribe ;))
+            </p>
+            <button (click)="candyRouting()" class="bg-blue-300 text-blue-900 font-bold py-2 mx-5 self-center w-64 h-20 mt-2 shadow-xl rounded-md shadow-blue-100/50">Claim FREE CANDY</button>
         </div>
     </div>
 
+    <div class=" flex min-w-screen flex-row justify-center bg-slate-300">
+        <div class="cols-start-2 col-span-6 flex flex-col my-7">
+            <h1 class="text-center text-3xl font-extrabold leading-none lg:text-8xl dark:text-white mb-2 mx-5">Suggestion</h1>
+            <p class="text-center text-xl font-light text-gray-900 lg:text-xl mx-5">An public platform to voice anything you want completely anonymously</p>
+            <button (click)="suggestionRouting()" class="bg-blue-300 text-blue-900 font-bold py-2 mx-5 self-center w-64 h-20 mt-2 shadow-xl rounded-md shadow-blue-900/50"> Make a SUGGESTION</button>
+        </div>
+    </div>
 </section>
+
 
 
 

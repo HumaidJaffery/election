@@ -1,6 +1,16 @@
 
 <div id="container" (scroll)="scroll($event)" #scrollelement>
-    <app-add-suggestion (reloadSuggestion)="loadSuggestions()"> </app-add-suggestion>
+    <div *ngIf="redirect">
+        <div class="flex justify-center flex-col shadow-md mt-3 mx-3 p-4 outline outline-green-600 bg-green-300 text-center">
+            <p><b>Congratulations</b> on claiming your candy</p>
+            <p> We will try to deliver it <b>ASAP</b> </p>
+        </div>
+        <div class="flex justify-center flex-col shadow-md mt-3 mx-3 p-4 outline outline-green-600 bg-green-300 text-center">
+            <p>Meanwhile, please feel free to suggest <b>anything you want</b> (public or private) in this <b>anonymous</b> platform </p>
+        </div>
+    </div>
+
+    <app-add-suggestion (reloadSuggestion)="loadSuggestions()" > </app-add-suggestion>
     <div  *ngFor="let page of Pages">
         <div class="shadow-xl mt-3 mx-3 p-4 rounded-md outline outline-slate-900 flex" *ngFor="let suggestion of page.content">
             <app-like-btn [suggestion]="suggestion"></app-like-btn>

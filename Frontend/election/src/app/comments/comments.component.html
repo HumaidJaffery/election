@@ -1,7 +1,7 @@
 
 
 <div class="flex flex-row my-2">
-    <button (click)="revealForm()" [hidden]="!isFormHidden" class="outline outline-blue-500 bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-4 mx-2 rounded self-center">Add Comment</button><br>
+    <button (click)="revealForm()" [hidden]="!isFormHidden" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-4 mx-2 rounded self-center">Add Comment</button><br>
     <button (click)="getComments(currentPageNumber)"  [hidden]="!isFirstPage" class="outline outline-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-4 mx-2 rounded self-center">See Comments</button>
     <button (click)="hideComments()" [hidden]="commentsHidden" class="outline outline-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-4 mx-2 rounded self-center">Hide Comments</button>
 </div>

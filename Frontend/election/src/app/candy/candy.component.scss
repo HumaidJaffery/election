@@ -10,16 +10,16 @@ span{
     width: inherit;
 }
 
-input[type="radio"] {
+.locker {
     position: absolute;
     left: -9999px;
   }
   
-input[type="radio"]:checked + label > img {
+.locker:checked + label > img {
     box-shadow: 0 0 4px 4px rgb(59 130 246);
 }
   
-input[type="radio"] + label > img {
+.locker + label > img {
     border: 1px rgb(0, 0, 0);
     padding: 10px;
 
